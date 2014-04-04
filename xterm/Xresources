@@ -1,0 +1,16 @@
+XTerm*colorMode: 	on
+XTerm*foreground: 	#ff5204
+XTerm*background: 	#000000
+XTerm*faceName: 	xft:DejaVu Sans Mono:size=8
+Xterm*utf8:		8
+
+Xft*dpi:                96
+Xft*antialias:          true
+Xft*hinting:            full
+
+Xft.autohint: 		0
+Xft.lcdfilter:  	lcddefault
+Xft.hintstyle:  	hintfull
+Xft.hinting: 		1
+Xft.antialias: 		0
+Xft.rgba: 		rgb

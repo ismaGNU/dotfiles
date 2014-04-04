@@ -1,0 +1,124 @@
+"
+"                       __   _(_)_ __ ___  _ __ ___
+"                       \ \ / / | '_ ` _ \| '__/ __|
+"                        \ V /| | | | | | | | | (__
+"                       (_)_/ |_|_| |_| |_|_|  \___|
+"
+" Author: Ismael Sanchez <isma@ismagnu.com>
+" Source: http://github.com/ismagnu/
+"
+" ██▓  ██████  ███▄ ▄███▓ ▄▄▄        ▄████  ███▄    █  █    ██ 
+" ▓██▒▒██    ▒ ▓██▒▀█▀ ██▒▒████▄     ██▒ ▀█▒ ██ ▀█   █  ██  ▓██▒
+" ▒██▒░ ▓██▄   ▓██    ▓██░▒██  ▀█▄  ▒██░▄▄▄░▓██  ▀█ ██▒▓██  ▒██░
+" ░██░  ▒   ██▒▒██    ▒██ ░██▄▄▄▄██ ░▓█  ██▓▓██▒  ▐▌██▒▓▓█  ░██░
+" ░██░▒██████▒▒▒██▒   ░██▒ ▓█   ▓██▒░▒▓███▀▒▒██░   ▓██░▒▒█████▓ 
+" ░▓  ▒ ▒▓▒ ▒ ░░ ▒░   ░  ░ ▒▒   ▓▒█░ ░▒   ▒ ░ ▒░   ▒ ▒ ░▒▓▒ ▒ ▒ 
+"  ▒ ░░ ░▒  ░ ░░  ░      ░  ▒   ▒▒ ░  ░   ░ ░ ░░   ░ ▒░░░▒░ ░ ░ 
+"   ▒ ░░  ░  ░  ░      ░     ░   ▒   ░ ░   ░    ░   ░ ░  ░░░ ░ ░ 
+"    ░        ░         ░         ░  ░      ░          ░    ░     
+"                                                              
+"
+" NEOBUNDLE {{{ ==============================================================
+
+" Autoinstalling NeoBundle (from joe di castro)
+let iCanHazNeoBundle=1
+let neobundle_readme=expand($HOME.'/.vim/bundle/neobundle.vim/README.md')
+if !filereadable(neobundle_readme)
+    echo "Installing NeoBundle.."
+    echo ""
+    silent !mkdir -p $HOME/.vim/bundle
+    silent !git clone https://github.com/Shougo/neobundle.vim $HOME/.vim/bundle/neobundle.vim
+    let iCanHazNeoBundle=0
+endif
+
+" Starting neobundle
+if has('vim_starting')
+   set nocompatible               " Be iMproved
+
+   " Required:
+   set runtimepath+=~/.vim/bundle/neobundle.vim/
+ endif
+
+" Required:
+ call neobundle#rc(expand('~/.vim/bundle/'))
+
+
+" Required:
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" Unite  and plugins lazy to speed startup
+NeoBundle 'Shougo/unite.vim'
+
+" Unite sources
+NeoBundleLazy 'ujihisa/unite-colorscheme', {'autoload':{'unite_sources': 'colorscheme'}}
+
+" Plugins
+NeoBundleLazy 'Shougo/vimfiler', {'autoload' : { 'commands' : ['VimFiler']}}
+NeoBundle 'bling/vim-airline'
+NeoBundle 'joedicastro/vim-molokai256'
+NeoBundle 'chriskempson/vim-tomorrow-theme'
+"NeoBundleLazy 'tomasr/molokai'
+
+" Installing plugins first time (joe di castro rules)
+if iCanHazNeoBundle == 0
+    echo "Installing Bundles, please ignore key map error messages"
+    echo ""
+    :NeoBundleInstall
+endif
+
+
+ " Required:
+ filetype plugin indent on
+
+ " If there are uninstalled bundles found on startup,
+ " this will conveniently prompt you to install them.
+ NeoBundleCheck
+
+" NEOBUNDLE }}}
+
+" Basic config
+  scriptencoding utf-8
+  set encoding=utf-8
+  set ls=2		"line status visible
+  "UI
+    set noshowmode 
+    set number
+  " Colorscheme
+  syntax on
+  set background=dark
+  set t_Co=256
+  colorscheme Tomorrow-Night-Bright 
+
+" PLUGIN CONFIGURATION {{{
+
+  " VimFiler {{{
+  let g:vimfiler_as_default_explorer = 1
+
+  let g:vimfiler_tree_leaf_icon = '├'
+  let g:vimfiler_tree_opened_icon = '┐'
+  let g:vimfiler_tree_closed_icon = '─'
+  let g:vimfiler_file_icon = '┄'
+  let g:vimfiler_marked_file_icon = '✓'
+  let g:vimfiler_readonly_file_icon = '✗'
+
+  let g:vimfiler_force_overwrite_statusline = 0
+
+  let g:vimfiler_time_format = '%d-%m-%Y %H:%M:%S'
+  let g:vimfiler_data_directory = $HOME.'/.vim/tmp/vimfiler'
+
+  " }}
+
+  " Unite {{{
+  let g:unite_force_overwrite_statusline = 0
+  let g:unite_prompt = '>>> '  
+
+  "}}}
+
+  " Vim airline {{{
+  let g:airline#extensions#tabline#enabled = 1
+
+  "}}}
+
+
+" }}}
+
