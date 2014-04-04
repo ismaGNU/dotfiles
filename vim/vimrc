@@ -7,15 +7,12 @@
 " Author: Ismael Sanchez <isma@ismagnu.com>
 " Source: http://github.com/ismagnu/
 "
-" ██▓  ██████  ███▄ ▄███▓ ▄▄▄        ▄████  ███▄    █  █    ██ 
-" ▓██▒▒██    ▒ ▓██▒▀█▀ ██▒▒████▄     ██▒ ▀█▒ ██ ▀█   █  ██  ▓██▒
-" ▒██▒░ ▓██▄   ▓██    ▓██░▒██  ▀█▄  ▒██░▄▄▄░▓██  ▀█ ██▒▓██  ▒██░
-" ░██░  ▒   ██▒▒██    ▒██ ░██▄▄▄▄██ ░▓█  ██▓▓██▒  ▐▌██▒▓▓█  ░██░
-" ░██░▒██████▒▒▒██▒   ░██▒ ▓█   ▓██▒░▒▓███▀▒▒██░   ▓██░▒▒█████▓ 
-" ░▓  ▒ ▒▓▒ ▒ ░░ ▒░   ░  ░ ▒▒   ▓▒█░ ░▒   ▒ ░ ▒░   ▒ ▒ ░▒▓▒ ▒ ▒ 
-"  ▒ ░░ ░▒  ░ ░░  ░      ░  ▒   ▒▒ ░  ░   ░ ░ ░░   ░ ▒░░░▒░ ░ ░ 
-"   ▒ ░░  ░  ░  ░      ░     ░   ▒   ░ ░   ░    ░   ░ ░  ░░░ ░ ░ 
-"    ░        ░         ░         ░  ░      ░          ░    ░     
+"  ██╗███████╗███╗   ███╗ █████╗  ██████╗ ███╗   ██╗██╗   ██╗
+"  ██║██╔════╝████╗ ████║██╔══██╗██╔════╝ ████╗  ██║██║   ██║
+"  ██║███████╗██╔████╔██║███████║██║  ███╗██╔██╗ ██║██║   ██║
+"  ██║╚════██║██║╚██╔╝██║██╔══██║██║   ██║██║╚██╗██║██║   ██║
+"  ██║███████║██║ ╚═╝ ██║██║  ██║╚██████╔╝██║ ╚████║╚██████╔╝
+"  ╚═╝╚══════╝╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝  
 "                                                              
 "
 " NEOBUNDLE {{{ ==============================================================
@@ -57,7 +54,6 @@ NeoBundleLazy 'Shougo/vimfiler', {'autoload' : { 'commands' : ['VimFiler']}}
 NeoBundle 'bling/vim-airline'
 NeoBundle 'joedicastro/vim-molokai256'
 NeoBundle 'chriskempson/vim-tomorrow-theme'
-"NeoBundleLazy 'tomasr/molokai'
 
 " Installing plugins first time (joe di castro rules)
 if iCanHazNeoBundle == 0
@@ -104,13 +100,15 @@ endif
   let g:vimfiler_force_overwrite_statusline = 0
 
   let g:vimfiler_time_format = '%d-%m-%Y %H:%M:%S'
-  let g:vimfiler_data_directory = $HOME.'/.vim/tmp/vimfiler'
+  let g:vimfiler_data_directory = $HOME.'/.vim/cache/vimfiler'
 
   " }}
 
   " Unite {{{
   let g:unite_force_overwrite_statusline = 0
-  let g:unite_prompt = '>>> '  
+  let g:unite_prompt = '>>> '
+  let g:unite_data_directory = $HOME.'/.vim/cache/unite'
+  let g:unite_split_rule = 'botright'    
 
   "}}}
 
