@@ -1,16 +1,51 @@
-XTerm*colorMode: 	on
+XTerm*faceName:             xft:Dejavu Sans Mono for Powerline:size=8
+XTerm*utf8:                 2
+
+XTerm*background:           #121212
+/*XTerm*foreground:           #FFFFFF
+! black */
 XTerm*foreground: 	#ff5204
-XTerm*background: 	#000000
-XTerm*faceName: 	xft:DejaVu Sans Mono:size=8
-Xterm*utf8:		8
 
-Xft*dpi:                96
-Xft*antialias:          true
-Xft*hinting:            full
+XTerm*color0  :             #2E3436
+XTerm*color8  :             #555753
+! red
 
-Xft.autohint: 		0
-Xft.lcdfilter:  	lcddefault
-Xft.hintstyle:  	hintfull
-Xft.hinting: 		1
-Xft.antialias: 		0
-Xft.rgba: 		rgb
+XTerm*color1  :             #CC0000
+XTerm*color9  :             #EF2929
+! green
+
+XTerm*color2  :             #4E9A06
+XTerm*color10 :             #8AE234
+! yellow
+
+XTerm*color3  :             #C4A000
+XTerm*color11 :             #FCE94F
+! blue
+
+XTerm*color4  :             #3465A4
+XTerm*color12 :             #729FCF
+! magenta
+
+XTerm*color5  :             #75507B
+XTerm*color13 :             #AD7FA8
+! cyan
+
+XTerm*color6  :             #06989A
+XTerm*color14 :             #34E2E2
+! white
+
+XTerm*color7  :             #D3D7CF
+XTerm*color15 :             #EEEEEC
+
+XTerm*saveLines:            32767
+
+Xft*dpi:                    96
+Xft*antialias:              true
+Xft*hinting:                full
+
+Xft.autohint: 0
+Xft.lcdfilter:  lcddefault
+Xft.hintstyle:  hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
